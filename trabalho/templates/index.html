@@ -1,0 +1,30 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Hotel</title>
+</head>
+<body>
+    <h1>Lista de Hóspedes</h1>
+    <ul>
+        {% for h in hospedes %}
+            <li>{{ h.nome }} - Quarto {{ h.quarto }} - Status: {{ h.status }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Adicionar Hóspede</h2>
+    <form method="POST" action="/adicionar">
+        <input name="nome" placeholder="Nome"><br>
+        <input name="idade" placeholder="Idade" type="number"><br>
+        <input name="quarto" placeholder="Quarto" type="number"><br>
+        <input name="diaria" placeholder="Diária" type="number" step="0.01"><br>
+        <input name="contatos" placeholder="Contatos (separados por vírgula)"><br>
+        <input name="entrada" placeholder="Data de entrada"><br>
+        <input name="saida" placeholder="Data de saída"><br>
+        <input name="status" placeholder="Status"><br>
+        <button type="submit">Adicionar</button>
+    </form>
+</body>
+</html>
